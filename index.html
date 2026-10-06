@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>ShortSio</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #000;
+      color: #fff;
+      font-family: -apple-system, sans-serif;
+      overflow: hidden;
+      height: 100vh;
+    }
+    #player {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+    }
+    .actions {
+      position: fixed;
+      right: 12px;
+      bottom: 100px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      z-index: 10;
+    }
+    .btn {
+      font-size: 36px;
+      cursor: pointer;
+      user-select: none;
+      transition: transform 0.1s;
+    }
+    .btn:active { transform: scale(1.3); }
+    .top-bar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      padding: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.6), transparent);
+    }
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: #ff0050;
+    }
+    .dm-btn {
+      background: rgba(255,255,255,0.15);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .loading {
+      position: fixed;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 16px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <div class="logo">ShortSio</div>
+    <div class="dm-btn" id="dmBtn">💬 DM</div>
+  </div>
+
+  <div id="player"></div>
+
+  <div class="loading" id="loading">Yükleniyor...</div>
+
+  <div class="actions">
+    <span class="btn" id="likeBtn">❤️</span>
+    <span class="btn" id="shareBtn">📤</span>
+    <span class="btn" id="nextBtn">⬇️</span>
+  </div>
+
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script type="module" src="/app.js"></script>
+</body>
+  </html>
